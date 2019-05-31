@@ -51,7 +51,8 @@
   },
   "scripts": {
     "build": "node scripts/build.js && npm run doc && npm run tsd",
-    "prepare": "npm run build",
+    "install": "node scripts/build.js && npm run doc && npm run tsd",
+    
     "test": "jest",
     "test:watch": "jest --watch",
     "test:report": "rimraf report/ && jest --config jest-report.config.js",
