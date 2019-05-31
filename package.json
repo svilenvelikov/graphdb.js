@@ -50,7 +50,7 @@
     "node": ">=8.16.0"
   },
   "scripts": {
-    "build": "node scripts/build.js",
+    "build": "node scripts/build.js && npm run tsd",
     "prepare": "npm run build",
     "test": "jest",
     "test:watch": "jest --watch",
