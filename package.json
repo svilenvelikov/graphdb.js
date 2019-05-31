@@ -42,6 +42,7 @@
   "typings": "lib/index.d.ts",
   "files": [
     "lib/",
+    "scripts/",
     "README.md",
     "LICENSE"
   ],
