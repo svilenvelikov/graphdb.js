@@ -14,15 +14,18 @@ const {
 const DEST_FOLDER = './lib';
 const SOURCE_FOLDER = './src';
 
-if (require.main === module) {
-  rmdirRecursive(DEST_FOLDER);
-  mkdirRecursive(DEST_FOLDER);
+function build() {
+  if (require.main === module) {
+    rmdirRecursive(DEST_FOLDER);
+    mkdirRecursive(DEST_FOLDER);
 
-  const srcFiles = readdirRecursive(SOURCE_FOLDER);
-  for (const filepath of srcFiles) {
-    if (filepath.endsWith('.js')) {
-      buildJSFile(filepath);
+    const srcFiles = readdirRecursive(SOURCE_FOLDER);
+    for (const filepath of srcFiles) {
+      if (filepath.endsWith('.js')) {
+        buildJSFile(filepath);
+      }
     }
+    return true;
   }
 }
 
@@ -33,3 +36,5 @@ function buildJSFile(filepath) {
 
   writeFile(destPath, transpiled.code);
 }
+
+return build();
