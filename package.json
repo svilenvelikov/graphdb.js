@@ -50,6 +50,7 @@
     "node": ">=8.16.0"
   },
   "scripts": {
+    "build": "node scripts/build.js",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:report": "rimraf report/ && jest --config jest-report.config.js",
